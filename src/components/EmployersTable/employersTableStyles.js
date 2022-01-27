@@ -5,7 +5,7 @@ const gridStyles = {
     width: '100%',
     display: 'grid',
     gridGap: '1.5rem',
-    gridTemplateColumns: '5% 25% 25% 20% 5% 10%',
+    gridTemplateColumns: '5% 25% 25% 10% 5% 10% 10%',
     fontSize: '20px',
     color: 'white',
 

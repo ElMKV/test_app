@@ -28,28 +28,47 @@ const EmployersTable = () => {
     }
 
     return (
-        <div className={classes.employersTable}>
-            <div className={classes.employersTableHeader}>
-                <div>ID</div>
-                <div>ФИО</div>
-                <div>Руководитель</div>
-                <div>Филиал</div>
-            </div>
-            <div>
-                {employers.length > 0 && employers.map((item) => (
-                    <div key={item.id} className={classes.employersTableRow}>
-                        <div>{item.id}</div>
-                        <div>{item.fio}</div>
-                        <div>{item.boss !== null ? item.boss.fio : '-'}</div>
-                        <div>{item.companyName}</div>
-                        <button style={{ backgroundColor: "red", color: "white" }} onClick={() => dispatch(removeEmployers(item.id))}>Удалить</button>
-                        <button style={{ backgroundColor: "green", color: "white" }} onClick={() => handleEdit(item.id)}>Редактировать</button>
-                    </div>
-                ))}
-            </div>
-            {currentId > 0 && <EditEmployer id={currentId} active={active} onClose={() => handleClose()} />}
+      <div className={classes.employersTable}>
+        <div className={classes.employersTableHeader}>
+          <div>ID</div>
+          <div>ФИО</div>
+          <div>Руководитель</div>
+          <div>Филиал</div>
+          <div>Задачи</div>
         </div>
+        <div>
+          {employers.length > 0 &&
+            employers.map((item) => (
+              <div key={item.id} className={classes.employersTableRow}>
+                <div>{item.id}</div>
+                <div>{item.fio}</div>
+                <div>{item.boss !== null ? item.boss.fio : "-"}</div>
+                <div>{item.companyName}</div>
+                <div>{item.tasksCount}</div>
 
+                <button
+                  style={{ backgroundColor: "red", color: "white" }}
+                  onClick={() => dispatch(removeEmployers(item.id))}
+                >
+                  Удалить
+                </button>
+                <button
+                  style={{ backgroundColor: "green", color: "white" }}
+                  onClick={() => handleEdit(item.id)}
+                >
+                  Редактировать
+                </button>
+              </div>
+            ))}
+        </div>
+        {currentId > 0 && (
+          <EditEmployer
+            id={currentId}
+            active={active}
+            onClose={() => handleClose()}
+          />
+        )}
+      </div>
     );
 };
 
