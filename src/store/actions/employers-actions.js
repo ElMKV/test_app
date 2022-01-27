@@ -23,7 +23,7 @@ export const removeEmployers = (id) => async (dispatch) => {
     }
     catch (e) {
         console.log(e.message);
-        alert(e.message);
+        alert("Невозможно удалить, пока существуют задачи");
 
     }
 };
