@@ -3,11 +3,10 @@ import axios from "axios";
 export const getTasks = () => async (dispatch) => {
     try{
         const {data} = await axios.get('http://localhost:8091/task');
-        // console.log(data);
         dispatch({
-            type: 'SET_TASKS',
-            payload: data
-        })
+          type: "SET_TASKS",
+          payload: data,
+        });
     }
     catch(e){
         console.log(e.message);

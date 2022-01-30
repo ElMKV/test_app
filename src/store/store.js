@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { employersReducer } from './reducers/employers-reducer';
-import { taksReducer, tasksReducer } from './reducers/tasks-reducer';
+import { tasksReducer } from './reducers/tasks-reducer';
 
 
 const rootReducer = combineReducers({
