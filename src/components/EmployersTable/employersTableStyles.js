@@ -12,29 +12,46 @@ const gridStyles = {
 
 }
 const useStyle = createUseStyles({
-    employersTable: {
-        padding: {
-            top: '15px',
-            right: '30px',
-            left: '30px',
-            bottom: '15px'
-        },
-
+  employersTable: {
+    padding: {
+      top: "15px",
+      right: "30px",
+      left: "30px",
+      bottom: "15px",
     },
-    employersTableHeader: {
-        ...gridStyles,
-        borderBottom: '1px solid white',
+  },
+  employersTableHeader: {
+    ...gridStyles,
+    borderBottom: "1px solid white",
+  },
+  employersTableRow: {
+    ...gridStyles,
+    padding: {
+      top: "15px",
+      bottom: "15px",
     },
-    employersTableRow: {
-        ...gridStyles,
-        padding: {
-            top: '15px',
-            bottom: '15px'
-        },
-        borderBottom: '1px solid white',
-        
+    borderBottom: "1px solid white",
+  },
+  previusAndNextButton: {
+    padding: {
+      top: "10px",
+      right: "30px",
+      left: "30px",
+      bottom: "10px",
+    },
 
-    }
+    width: "100%",
+    display: "grid",
+    justifyContent: "center",
+    gridGap: "1.5rem",
+    gridTemplateColumns: "20% 60% 20%",
+    gridTemplateRows: "30px",
+
+    "& button": {
+      backgroundColor: "white",
+    },
+  },
 });
+  
 
 export default useStyle;
